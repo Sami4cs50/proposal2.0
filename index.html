@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>Will You Be My Girlfriend? 💕</title>
+
+<!-- Google Fonts: Playfair Display (elegant headline serif), Great Vibes (romantic script), Nunito (soft rounded body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= BACKGROUND LAYERS ================= -->
+  <!-- Floating hearts drift slowly upward across the whole page -->
+  <div class="bg-hearts" id="bgHearts" aria-hidden="true"></div>
+  <!-- Tiny twinkling sparkles scattered across the whole page -->
+  <div class="bg-sparkles" id="bgSparkles" aria-hidden="true"></div>
+  <!-- Soft glowing gradient blobs that slowly drift, giving depth -->
+  <div class="bg-glow" aria-hidden="true">
+    <span class="glow glow-a"></span>
+    <span class="glow glow-b"></span>
+  </div>
+
+  <!-- ================= MUSIC BUTTON ================= -->
+  <button class="music-btn" id="musicBtn" aria-label="Play romantic music">
+    <span class="music-icon">🎵</span>
+    <span class="music-label">Play Music</span>
+  </button>
+  <!--
+    To change the song later, just replace the file "song.mp3" inside the
+    /music folder with your own file (keep the same name "song.mp3"),
+    OR edit the src value on the line below.
+  -->
+  <audio id="bgMusic" src="music/song.mp3" loop preload="none"></audio>
+
+  <!-- ================= SCENE 1 : THE QUESTION ================= -->
+  <main class="scene scene--question" id="questionScene">
+    <div class="glass-card question-card">
+      <p class="eyebrow">✨ a little something for you ✨</p>
+      <h1 class="headline">Will you be my girlfriend? <span class="heart-inline">❤️</span></h1>
+      <p class="subtext">I've been wanting to ask you something important&hellip;</p>
+
+      <div class="button-row" id="buttonRow">
+        <button class="btn btn-yes" id="yesBtn" type="button">
+          <span class="btn-icon">❤️</span> Yes
+        </button>
+        <button class="btn btn-no" id="noBtn" type="button">
+          <span class="btn-icon">💔</span> No
+        </button>
+      </div>
+
+      <p class="hint" id="dodgeHint" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <!-- ================= SCENE 2 : THE ANSWER ================= -->
+  <main class="scene scene--answer" id="answerScene" hidden>
+    <div class="answer-content">
+
+      <div class="glass-card reveal-block" data-order="1">
+        <p class="big-line">You just made me the happiest man alive <span class="heart-inline">❤️</span></p>
+      </div>
+
+      <div class="glass-card reveal-block" data-order="2">
+        <p class="promise-line">I promise to cherish you, support you, laugh with you, stand beside you through every adventure, and make countless beautiful memories together.</p>
+      </div>
+
+      <div class="glass-card reveal-block small-block" data-order="3">
+        <p class="thanks-line">Thank you for saying <span class="yes-word">YES</span>.</p>
+      </div>
+
+      <div class="glass-card reveal-block small-block" data-order="4">
+        <p class="chapter-line">I can&rsquo;t wait for our first chapter together.</p>
+      </div>
+
+      <div class="reveal-block heart-finale" data-order="5">
+        <div class="big-heart" id="bigHeart">
+          <svg viewBox="0 0 200 180" class="big-heart-svg" aria-hidden="true">
+            <path d="M100 170 C 20 110, -10 55, 35 25 C 65 5, 95 20, 100 45 C 105 20, 135 5, 165 25 C 210 55, 180 110, 100 170 Z"/>
+          </svg>
+        </div>
+        <p class="i-love-you">I love you <span class="heart-inline">❤️</span></p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Canvas used purely for the confetti burst -->
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
